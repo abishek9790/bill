@@ -1,0 +1,61 @@
+{% extends 'dummy.html' %} {% block title %}
+<title>Party</title>
+<style>
+    h1
+    {
+        text-align: center;
+    }
+    #one
+    {
+        max-width: 500PX;
+        margin: auto;
+        background: white;
+        padding: 10PX;
+        border: 2px solid black;
+        background-color: mediumturquoise;
+    }
+    body{
+        position: relative;
+        width: 100%;
+        height: 10em;
+    }
+    span
+    {
+        display: flex;
+        justify-content: end;
+    }
+    span a
+    {
+        border: 2px solid blue;
+    }
+    #two
+    {
+        padding: 5px;
+        border: 3px solid skyblue;
+        margin: 20px;
+    }
+</style>
+{% endblock %} {% block content %}
+<body>
+    <h1>Material Master/Item Master</h1>
+    <span><nav>
+        <a href="{% url 'home' %}" id="two">Home</a>
+        <a href="{% url 'materials' %}" id="two">Material</a>
+        <a href="{% url 'hsnform' %}" id="two">HSN</a>
+        <a href="{% url 'invoiceform' %}" id="two">Invoice</a>
+    </nav></span>
+    <div class="container" id="one">
+        <div class="row">
+            <div class="col-6">
+                {% include 'message.html' %}<br><br>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                        {{pf.as_p}}
+
+                    <input type="submit" value="Submit" class="btn btn-success">
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>

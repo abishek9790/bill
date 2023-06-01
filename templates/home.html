@@ -1,0 +1,34 @@
+{% extends 'dummy.html' %}{% block title %}
+<title>Home</title>
+{% endblock %}
+<body>
+    {% block content %}
+<div class="container-fluid">
+    <h1 style="text-align: center;">Home page</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'home' %}">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'materials' %}">Material<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'party_form' %}">Party</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'hsnform' %}">HSN</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'invoiceform' %}">Invoice</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+</div>
+{% endblock %}
+    
+</body>
